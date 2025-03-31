@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background-color: #2e2b3a;
+            font-family: 'Dancing Script', cursive;
+            color: #f8c8dc;
+            position: relative;
+            overflow-y: auto;
+        }
+        .ceu-estrelado {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('ceu.jpeg') no-repeat center center/cover;
+            z-index: -1;
+        }
+        .lua {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 150px;
+            height: 150px;
+        }
+        .morcego, .imagem-extra {
+            position: absolute;
+            width: 120px;
+            height: auto;
+        }
+        .morcego1 { top: 10%; left: 10%; }
+        .morcego2 { top: 30%; right: 15%; }
+        .morcego3 { bottom: 20%; left: 50%; }
+        .imagem-extra1 { top: 20%; left: 30%; }
+        .imagem-extra2 { top: 50%; right: 25%; }
+        h1 {
+            color: #ff91af;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .subtitulo {
+            text-align: center;
+            width: 100%;
+            position: relative;
+        }
+        p {
+            margin-bottom: 30px;
+        }
+        .botoes-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .botao {
+            background-color: #b07dca;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+        }
+        .botao:hover {
+            background-color: #8e5aa8;
+        }
+        .conteudo {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .carta {
+            min-height: 300px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function mostrarConteudo(id) {
+            let conteudos = document.querySelectorAll('.conteudo');
+            conteudos.forEach(conteudo => conteudo.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="ceu-estrelado"></div>
+    <img src="pixel-art-moon-png.png" class="lua">
+    <img src="Bat.webp" class="morcego morcego1">
+    <img src="Bat.webp" class="morcego morcego2">
+    <img src="Bat.webp" class="morcego morcego3">
+    <h1>Apenas uma cartinha</h1>
+    <div class="carta">
+        <p class="subtitulo">Assim como o sol fez, eu queria contar o que sinto pela lua</p>
+        <div class="botoes-container">
+            <button class="botao" onclick="mostrarConteudo('sentimentos')">Por que um site?</button>
+            <button class="botao" onclick="mostrarConteudo('amor')">O que me fez gostar de você?</button>
+            <button class="botao" onclick="mostrarConteudo('mensagem')">Por que estou fazendo isso?</button>
+            <button class="botao" onclick="mostrarConteudo('extra')">Algumas coisinhas extras</button>
+        </div>
+        
+        <div id="sentimentos" class="conteudo">
+            <p>Pra ser sincero essa nunca foi a ideia principal, mas pelo fato de achar que seria praticamente impossível de a gente se ver, então eu decidi contar dessa forma, eu sei que poderia fazer só um texto no whatsapp, mas eu realmente acho que é covarde demais e queria fazer algo mais elaborado pra você, não algo meio tosco e tão simples </p>
+        </div>
+        <div id="amor" class="conteudo">
+            <p>Nem eu sei explicar muito bem, é meio complicado sabe, pode ser meio clichê, mas você tem um jeito muito interessante que eu admiro muito, meio esquisita pra krl e ao mesmo tempo nem tanto, o seu jeitinho de falar eu acho simplesmente incrível, sem falar das vezes que são raras infelizmente, mas quando você chega falando pra krl contando alguma coisa que rolou no seu dia é muito bom ficar ouvindo você falando cada detalhe, fico apenas admirando e mesmo que às vezes eu nem fale muito eu realmente amo quando faz isso. Eu poderia ficar falando aqui o dia inteiro sobre o quão você é absurda de linda mas eu acho que já sabe a minha opinião sobre, principalmente o seu olhar, mesmo que você julgue tanto ele, é impossível não reparar o quanto ele é simplesmente incrível em cada detalhe</p>
+        </div>
+        <div id="mensagem" class="conteudo">
+            <p>Eu realmente queria muito poder dizer finalmente o que sinto por ti, tava me corroendo um pouco deixar isso guardado sabe, então essa foi a melhor forma que eu encontrei</p>
+        </div>
+        <div>
+        <div id="extra" class="conteudo">
+            <p>Passar o tempo com você é algo muito especial pra mim e eu amo quando a gente fica conversando e falando bobagem ou até alguma outra coisa que nem na vez que você ficou pintando aquele desenho e me mostrando como tava ficando, eu senti realmente como se eu estivesse realmente com você naquela hora e foi simplesmente incrível, e olha, nada do que eu fiz foi querendo te conquistar de certa forma, eu só realmente gosto muito de você de verdade (não faz ideia do tempo que eu fiquei pensando nisso) e foi só uma forma de mostrar que eu realmente tenho um carinho por você e não pretendo deixar de fazer essas coisas caso você não sinta o mesmo e tal, é só minha forma de mostrar que você é uma pessoa especial pra mim</p>
+        </div>
+    </div>
+</body>
+</html>
